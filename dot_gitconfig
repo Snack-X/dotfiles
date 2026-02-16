@@ -1,0 +1,53 @@
+# Reference: https://blog.gitbutler.com/how-git-core-devs-configure-git
+
+[branch]
+sort = -committerdate
+
+[column]
+ui = auto
+
+[commit]
+verbose = true
+
+[core]
+excludesfile = ~/.gitignore
+
+[diff]
+algorithm = histogram
+colorMoved = plain
+mnemonicPrefix = true
+renames = true
+
+[fetch]
+prune = true
+pruneTags = true
+all = true
+
+[help]
+autocorrect = prompt
+
+[init]
+defaultBranch = main
+
+[push]
+default = simple
+autoSetupRemote = true
+followTags = true
+
+[rebase]
+autoSquash = true
+autoStash = true
+updateRefs = true
+
+[rerere]
+enabled = true
+autoupdate = true
+
+[tag]
+sort = version:refname
+
+[includeIf "hasconfig:remote.*.url:github-personal:**/**"]
+path = ~/.config/git/personal
+
+[includeIf "hasconfig:remote.*.url:github-theori:**/**"]
+path = ~/.config/git/theori

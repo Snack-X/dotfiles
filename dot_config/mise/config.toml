@@ -1,0 +1,7 @@
+[tools]
+1password = "latest"
+chezmoi = "latest"
+node = "24"
+pnpm = "latest"
+python = "3.13"
+uv = "latest"

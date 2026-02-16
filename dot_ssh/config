@@ -1,0 +1,9 @@
+Host github-personal
+    Hostname github.com
+    User git
+    IdentityFile ~/.ssh/personal
+
+Host github-theori
+    Hostname github.com
+    User git
+    IdentityFile ~/.ssh/theori
