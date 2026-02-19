@@ -1,0 +1,43 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="snack"
+SOLARIZED_THEME="dark"
+DEFAULT_USER="snack"
+
+HIST_STAMPS="yyyy-mm-dd"
+
+plugins=(
+    docker
+    docker-compose
+    git
+    tmux
+)
+
+if [[ $TERM_PROGRAM != "vscode" ]]; then
+    ZSH_TMUX_AUTOSTART=true
+fi
+ZSH_TMUX_AUTOQUIT=false
+
+source $ZSH/oh-my-zsh.sh
+
+################################################################################
+
+export LC_ALL="en_US.UTF-8"
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+{{ if eq .chezmoi.os "darwin" -}}
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib:$DYLD_FALLBACK_LIBRARY_PATH
+{{ end -}}
+
+export AWS_PAGER=""
+
+eval "$(mise activate zsh)"
+
+{{ if eq .chezmoi.os "darwin" -}}
+alias subl="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+alias vscode="open -a Visual\ Studio\ Code.app"
+{{ end -}}
+
+[[ -f "~/.zshrc.additional" ]] && source "~/.zshrc.additional"
