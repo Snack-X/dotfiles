@@ -29,5 +29,6 @@ https://www.chezmoi.io/install/
 ```
 $ mise use --global chezmoi
 
-$ chezmoi apply Snack-X
+$ chezmoi init Snack-X
+$ chezmoi apply
 ```
